@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digipro AS er din eksterne 2. linje tekniske støtte. Vi håndterer komplekse tekniske saker for din kundeservice.">
+    <title>Digipro AS - Din eksterne 2. linje tekniske støtte</title>
+    
+    <!-- ========================================== -->
+    <!-- SPORINGSKODER: GOOGLE & MICROSOFT          -->
+    <!-- ========================================== -->
+
+    <!-- Google tag (gtag.js) for Google Analytics og Google Ads -->
+    <!-- Bytt ut ENDRE-DENNE-KODEN-GA i linken under med din Analytics ID (typisk G-XXXXXXX) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=ENDRE-DENNE-KODEN-GA"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // 1. Google Analytics ID (Bytt ut ENDRE-DENNE-KODEN-GA med din G-XXXXXXX kode)
+      gtag('config', 'ENDRE-DENNE-KODEN-GA');
+      
+      // 2. Google Ads ID (Bytt ut ENDRE-DENNE-KODEN-GADS med din AW-XXXXXXX kode)
+      // Hvis du ikke bruker Google Ads ennå, kan du la denne stå eller slette linjen under.
+      gtag('config', 'ENDRE-DENNE-KODEN-GADS');
+    </script>
+
+    <!-- Microsoft Advertising (Bing Ads) UET Tag -->
+    <!-- Bytt ut ENDRE-DENNE-KODEN-MSADS med din UET Tag ID (kun tall) -->
+    <script>
+      (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"ENDRE-DENNE-KODEN-MSADS"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+    </script>
+
+    <!-- ========================================== -->
+    <!-- SLUTT PÅ SPORINGSKODER                     -->
+    <!-- ========================================== -->
+
+    <!-- Importerer en moderne, profesjonell font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLER (Oxford Blue & Profesjonelle farger) --- */
+        :root {
+            --brand-blue: #153e75; 
+            --brand-blue-hover: #1e56a0; 
+            --brand-dark: #111827; 
+            --brand-light-blue: #f0f4f8; 
+            --text-dark: #1e293b;
+            --text-light: #475569;
+            --white: #ffffff;
+            --font-main: 'Inter', sans-serif;
+            --transition: all 0.3s ease-in-out; 
+        }
+
+        /* --- RESET & GRUNNLEGGENDE STIL --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        /* --- KNAPPER --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--brand-blue);
+            color: var(--white);
+            box-shadow: 0 4px 6px rgba(21, 62, 117, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-blue-hover);
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 15px rgba(21, 62, 117, 0.3); 
+            color: var(--white);
+        }
+
+        .btn-dark {
+            background-color: var(--brand-dark);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background-color: #1f2937;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- HEADER & NAVIGASJON --- */
+        header {
+            background: var(--white);
+            color: var(--brand-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--brand-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { 
+            color: var(--brand-blue-hover); 
+        }
+
+        /* --- HERO SEKSJON --- */
+        .hero {
+            background-color: var(--brand-light-blue);
+            color: var(--brand-dark);
+            padding: 80px 20px 100px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text { flex: 1; }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--brand-dark);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 90%;
+            color: var(--text-light);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            display: block;
+        }
+
+        /* --- SMERTEPUNKTER --- */
+        .pain-points {
+            background-color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+            border-top: 5px solid var(--brand-blue);
+            transition: var(--transition); 
+        }
+        
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--brand-dark);
+        }
+
+        /* --- HVORDAN VI JOBBER --- */
+        .how-we-work {
+            background-color: var(--brand-dark);
+            color: var(--white);
+            padding: 100px 20px;
+        }
+
+        .how-we-work h2 { color: var(--white); }
+        .how-we-work .card { 
+            background: rgba(255,255,255,0.03);
+            border-top: none;
+            border-left: 5px solid var(--brand-blue);
+            box-shadow: none;
+        }
+        .how-we-work .card:hover {
+            background: rgba(255,255,255,0.06);
+        }
+        .how-we-work .card h3 { color: #588ec9; }
+        .how-we-work .card p { color: #cbd5e0; }
+
+        /* --- TJENESTER --- */
+        .services {
+            padding: 100px 20px;
+            background: var(--brand-light-blue);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            background: var(--brand-light-blue);
+            color: var(--brand-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--brand-dark);
+        }
+
+        .service-item p { color: var(--text-light); }
+
+        /* --- TILLIT & ERFARING --- */
+        .trust-section {
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            position: relative;
+            padding: 120px 20px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .trust-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(17, 24, 39, 0.9);
+        }
+
+        .trust-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .trust-content h2 { font-size: 2.5rem; margin-bottom: 20px; color: #588ec9; }
+        .trust-content p { font-size: 1.2rem; line-height: 1.8; color: #cbd5e0; }
+
+        /* --- NYHETSBREV (SUBSTACK) --- */
+        .newsletter {
+            background-color: var(--brand-blue);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #dbeafe;
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--brand-blue);
+        }
+
+        .btn-white:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- FOOTER & KONTAKT --- */
+        footer {
+            background-color: var(--brand-dark);
+            color: var(--white);
+            padding: 80px 20px 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 50px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 { color: #588ec9; margin-bottom: 20px; }
+        .footer-col p { margin-bottom: 10px; color: #cbd5e0; }
+        
+        .footer-col a { 
+            color: var(--white); 
+            transition: color 0.3s ease; 
+        }
+        
+        .footer-col a:hover { color: #588ec9; }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--brand-blue-hover);
+            transform: translateY(-4px); 
+        }
+
+        .social-links svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .copyright {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBIL TILPASNING --- */
+        @media (max-width: 900px) {
+            .hero-container { flex-direction: column; text-align: center; }
+            .hero-text p { max-width: 100%; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasjon -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Digipro AS</div>
+            <nav class="nav-links">
+                <a href="#tjenester">Hva vi gjør</a>
+                <a href="#hvordan">Hvordan vi jobber</a>
+                <a href="#kontakt" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Kontakt oss</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Seksjon -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Din eksterne 2. linje tekniske støtte.</h1>
+                    <p>Digipro bistår virksomheter når tekniske saker blir for komplekse for din kundeservice – og må vurderes faglig.</p>
+                    <a href="#kontakt" class="btn btn-primary">Ta kontakt for en vurdering</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Profesjonell IT-support medarbeider">
+                </div>
+            </div>
+        </section>
+
+        <!-- Smertepunkter -->
+        <section class="pain-points">
+            <div class="section-header">
+                <h2>Kjenner dere dere igjen?</h2>
+                <p>Vi håndterer de komplekse tekniske sakene fra din kundeservice der årsak, ansvar eller løsning er uklar.</p>
+            </div>
+            <div class="cards-container">
+                <article class="card">
+                    <h3>⏳ Saker som blir liggende for lenge</h3>
+                    <p>Saker hoper seg opp hos kundeservice fordi de mangler teknisk kompetanse til å løse dem umiddelbart.</p>
+                </article>
+                <article class="card">
+                    <h3>🗣 Kunder som krever svar, ikke forklaringer</h3>
+                    <p>Frustrerte kunder ønsker konkrete løsninger og fremdrift, ikke vage tekniske unnskyldninger.</p>
+                </article>
+                <article class="card">
+                    <h3>🚧 Uenighet mellom kundeservice og utvikling</h3>
+                    <p>Gapet mellom teknisk avdeling og kundeservice skaper friksjon. Vi bygger broen mellom dem.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Hvordan vi jobber -->
+        <section id="hvordan" class="how-we-work">
+            <div class="section-header" style="text-align: center;">
+                <h2>Hvordan vi jobber</h2>
+                <p style="color: #cbd5e0;">Metodikken som sikrer at sakene blir forstått, avklart og riktig håndtert.</p>
+            </div>
+            <div class="cards-container">
+                <article class="card">
+                    <h3>Grundig og strukturert</h3>
+                    <p>Vi prioriterer riktige vurderinger fremfor raske, ufullstendige svar i komplekse saker. Kvalitet i alle ledd.</p>
+                </article>
+                <article class="card">
+                    <h3>Kun 2. linje support</h3>
+                    <p>Vi håndterer utelukkende saker fra din 1. linje som krever avansert teknisk forståelse, vurdering og faglig ansvar.</p>
+                </article>
+                <article class="card">
+                    <h3>Asynkront og heldigitalt</h3>
+                    <p>All bistand skjer digitalt. Dette sikrer at prosessen er effektiv, fullt dokumentert og alltid etterprøvbar.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tjenester -->
+        <section id="tjenester" class="services">
+            <div class="section-header" style="text-align: center;">
+                <h2>Våre kjerneområder</h2>
+            </div>
+            <div class="services-grid">
+                
+                <div class="service-item">
+                    <div class="service-icon">✓</div>
+                    <div>
+                        <h3>Teknisk Vurdering</h3>
+                        <p>Få klare faglige vurderinger i saker hvor løsning, ansvar eller teknisk årsak er uklar.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">🔍</div>
+                    <div>
+                        <h3>Avansert Feilsøking</h3>
+                        <p>Vi dykker ned i komplekse saker der feilen ikke er åpenbar, og hvor ingen umiddelbart "eier" problemet.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">⚖️</div>
+                    <div>
+                        <h3>Uavhengig Vurdering</h3>
+                        <p>Få et objektivt blikk fra utsiden når dine interne ressurser står fast eller er faglig uenige.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">🛡️</div>
+                    <div>
+                        <h3>Ta Faglig Ansvar</h3>
+                        <p>Vi tar eierskap til saken frem til den er 100% forstått, avklart og riktig plassert videre i systemet.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">📈</div>
+                    <div>
+                        <h3>Eskalering & Prioritering</h3>
+                        <p>Vi analyserer og avgjør nøyaktig når en sak skal sendes videre, og hvem som faktisk bør involveres.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">💬</div>
+                    <div>
+                        <h3>Krevende Informasjon</h3>
+                        <p>Vi fungerer som en tolk som oversetter tung teknisk informasjon til forståelig språk for sluttbruker.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tillit / Erfaring -->
+        <section class="trust-section">
+            <div class="trust-overlay"></div>
+            <div class="trust-content">
+                <h2>Solid erfaring siden 2003</h2>
+                <p>Digipro drives av fagpersoner med lang erfaring fra teknisk support og komplekse kundesaker. Vår erfaring spenner fra operativ kundeservice helt opp til 2. linje-støtte i grensesnittet mellom teknologi, forretning og ledelse.</p>
+            </div>
+        </section>
+
+        <!-- Nyhetsbrev Substack -->
+        <section class="newsletter">
+            <div class="newsletter-container">
+                <h2>Få faglig påfyll om teknisk kundeservice</h2>
+                <p>Meld deg på vårt nyhetsbrev på Substack for innsikt, erfaringer og beste praksis for 2. linje support.</p>
+                <a href="https://digiproas.substack.com/" target="_blank" rel="noopener noreferrer" class="btn btn-white">
+                    Les og abonner gratis
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Kontakt oss -->
+    <footer id="kontakt">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Kontakt oss</h3>
+                <p>Usikker på om dette er riktig nivå for dere?</p>
+                <p>Ta kontakt for en helt uforpliktende vurdering av deres behov.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Direkte kontakt</h3>
+                <p><strong>Telefon:</strong> <a href="tel:41030906">41 03 09 06</a></p>
+                <p><strong>E-post:</strong> <a href="mailto:post@digipro.no">post@digipro.no</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Følg oss</h3>
+                <p>Hold deg oppdatert på våre sosiale medier.</p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/digipro-as/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/digipro.no" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Digipro AS. Alle rettigheter reservert. Org.nr: 911 611 953</p>
+        </div>
+    </footer>
+
+</body>
+</html>
