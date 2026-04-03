@@ -7,6 +7,12 @@
     <title>Digipro AS - Din eksterne 2. linje tekniske støtte</title>
     
     <!-- ========================================== -->
+    <!-- PRELOAD AV BILDER (Fikser treg innlasting) -->
+    <!-- ========================================== -->
+    <link rel="preload" as="image" href="img/hero-bilde.jpg">
+    <link rel="preload" as="image" href="img/bakgrunn.jpg">
+
+    <!-- ========================================== -->
     <!-- SPORINGSKODER: GOOGLE & MICROSOFT          -->
     <!-- ========================================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=ENDRE-DENNE-KODEN-GA"></script>
@@ -303,9 +309,9 @@
 
         .service-item p { color: var(--text-light); }
 
-        /* TILLIT & ERFARING */
+        /* TILLIT & ERFARING (Fikset optimalisering for raskere innlasting) */
         .trust-section {
-            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: url('img/bakgrunn.jpg') center center / cover no-repeat;
             position: relative;
             padding: 120px 20px;
             color: var(--white);
@@ -381,7 +387,6 @@
             margin-bottom: 30px;
         }
 
-        /* Spesifik posisjonering for PC-skjermer i footer */
         @media (min-width: 900px) {
             .footer-col-2 {
                 justify-self: center;
@@ -448,7 +453,6 @@
 
     <header>
         <div class="nav-container">
-            <!-- Prikken over i-en: Klikkbar logo som scroller til toppen -->
             <a href="#" class="logo">Digipro AS</a>
             <nav class="nav-links">
                 <a href="#tjenester">Hva vi gjør</a>
