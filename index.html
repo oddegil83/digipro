@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Digipro AS er din eksterne 2. linje tekniske støtte. Vi håndterer komplekse tekniske saker for din kundeservice.">
-    
-    <!-- ========================================== -->
-    <!-- SEO: TVING GOOGLE TIL Å INDEKSERE SIDEN    -->
-    <!-- ========================================== -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <!-- ========================================== -->
-
     <title>Digipro AS - Din eksterne 2. linje tekniske støtte</title>
     
     <!-- ========================================== -->
@@ -19,8 +12,12 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23153e75'/%3E%3Cpath d='M35 25 h 15 a 25 25 0 0 1 0 50 h -15 z' fill='none' stroke='%23ffffff' stroke-width='12' stroke-linejoin='round'/%3E%3C/svg%3E">
 
     <!-- ========================================== -->
-    <!-- PRELOAD AV BILDER (Fikser treg innlasting) -->
+    <!-- PRELOAD & YTELSES-OPTIMALISERING           -->
     <!-- ========================================== -->
+    <!-- Raskere tilkobling til Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload av bilder for maksimal PageSpeed score -->
     <link rel="preload" as="image" href="img/hero-bilde.jpg">
     <link rel="preload" as="image" href="img/bakgrunn.jpg">
 
@@ -192,6 +189,7 @@
 
         .hero-image img {
             width: 100%;
+            height: auto; /* Opprettholder proporsjoner sammen med width-attributten */
             border-radius: 12px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             display: block;
@@ -446,9 +444,10 @@
 
         .social-links svg { width: 20px; height: 20px; fill: currentColor; }
 
+        /* Fikset farge for bedre kontrast / WCAG-krav / PageSpeed score */
         .copyright {
             text-align: center;
-            color: #718096;
+            color: #94a3b8; /* Lyser opp teksten for UU/Tilgjengelighet */
             font-size: 0.9rem;
         }
 
@@ -483,7 +482,8 @@
                     <a href="#kontakt" class="btn btn-primary">Ta kontakt for en vurdering</a>
                 </div>
                 <div class="hero-image">
-                    <img src="img/hero-bilde.jpg" alt="Profesjonell IT-support medarbeider">
+                    <!-- Fikset CLS og LCP for PageSpeed med width, height og fetchpriority -->
+                    <img src="img/hero-bilde.jpg" alt="Profesjonell IT-support medarbeider" width="800" height="533" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -499,7 +499,7 @@
                     <p>Saker hoper seg opp hos kundeservice fordi de mangler teknisk kompetanse til å løse dem umiddelbart.</p>
                 </article>
                 <article class="card">
-                    <!-- TEKST ENDRET TIL BORTFORKLARINGER HER -->
+                    <!-- Tekstendring til bortforklaringer utført -->
                     <h3>🗣 Kunder som krever svar, ikke bortforklaringer</h3>
                     <p>Frustrerte kunder ønsker konkrete løsninger og fremdrift, ikke vage tekniske unnskyldninger.</p>
                 </article>
