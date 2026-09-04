@@ -350,71 +350,28 @@
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
-    background: linear-gradient(135deg, var(--accent-deep), var(--flame-deep));
+    background: linear-gradient(135deg, #241812, #150D0A);
     border-radius: 20px;
     padding: 52px;
     color: #FFF6EC;
   }
   .news-box .eyebrow { color: #FFD8B0; }
   .news-box h2 { color: #FFFFFF; font-size: clamp(1.5rem, 2.4vw, 2rem); margin-top: 14px; }
-  .news-box p { color: #FBE1CE; font-size: 16px; margin: 14px 0 26px; max-width: 42ch; }
-  .news-box .btn-primary { background: #FFF6EC; color: var(--ink); }
-  .news-box .btn-primary:hover { background: #FFE7CC; }
-  .news-subscribe {
-    background: #FFF9F4;
+  .news-box p { color: #D8CCC4; font-size: 16px; margin: 14px 0 26px; max-width: 42ch; }
+  .news-box .btn-primary { background: var(--btn-accent); color: #FFFFFF; box-shadow: 0 4px 14px rgba(0,0,0,0.35); }
+  .news-box .btn-primary:hover { background: var(--btn-accent-hover); }
+  .news-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 1px 2px rgba(32,20,17,0.08), 0 16px 32px rgba(32,20,17,0.16);
+    padding: 36px;
+    min-height: 220px;
   }
-  .news-subscribe .news-subscribe-label {
-    margin: 0 0 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ink-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .news-subscribe-form { display: flex; gap: 8px; }
-  .news-subscribe-form input {
-    flex: 1;
-    min-width: 0;
-    padding: 13px 16px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background: #FFFFFF;
-    color: var(--ink);
-    font-size: 15px;
-    font-family: inherit;
-  }
-  .news-subscribe-form input::placeholder { color: var(--ink-faint); }
-  .news-subscribe-form button {
-    padding: 13px 20px;
-    border-radius: 10px;
-    border: none;
-    background: var(--btn-accent);
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: inherit;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background .15s;
-  }
-  .news-subscribe-form button:hover { background: var(--btn-accent-hover); }
-  .news-subscribe .news-subscribe-note { margin: 12px 0 0; font-size: 13px; color: var(--ink-faint); max-width: none; }
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-  @media (max-width: 900px) { .news-box { grid-template-columns: 1fr; padding: 36px 28px; } }
-  @media (max-width: 480px) { .news-subscribe-form { flex-direction: column; } }
+  .news-visual svg { width: 100%; max-width: 220px; height: auto; }
+  @media (max-width: 900px) { .news-box { grid-template-columns: 1fr; padding: 36px 28px; } .news-visual { display: none; } }
 
   /* Contact */
   .contact-grid {
@@ -632,14 +589,14 @@
           <p>Vi deler det vi faktisk bruker selv - om salg, AI og smartere drift for småbedrifter. Annenhver uke, ingen forpliktelser.</p>
           <a href="https://digiprolabs.substack.com/subscribe" class="btn btn-primary" target="_blank" rel="noopener">Abonner på nyhetsbrevet →</a>
         </div>
-        <div class="news-subscribe">
-          <p class="news-subscribe-label">Meld deg på</p>
-          <form class="news-subscribe-form" action="https://digiprolabs.substack.com/subscribe" method="GET" target="_blank">
-            <label for="newsEmail" class="sr-only">E-postadresse</label>
-            <input type="email" id="newsEmail" name="email" placeholder="din@epost.no" required autocomplete="email">
-            <button type="submit">Abonner</button>
-          </form>
-          <p class="news-subscribe-note">Ingen spam. Avmeld når som helst.</p>
+        <div class="news-visual" aria-hidden="true">
+          <svg viewBox="0 0 200 160" fill="none">
+            <rect x="14" y="26" width="172" height="118" rx="14" stroke="#D8CCC4" stroke-width="2" opacity="0.35"/>
+            <path d="M14 40l82 62 82-62" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="152" cy="24" r="3" fill="var(--accent)"/>
+            <path d="M152 12v6M152 30v6M140 24h6M158 24h6" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M40 16v6M40 6v4M32 12h5M43 12h5" stroke="#D8CCC4" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+          </svg>
         </div>
       </div>
     </div>
